@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplements & Vitamins | GRLLA</title>
+    <meta name="description" content="Browse our premium selection of vitamins and supplements to support your fitness journey">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="supplements.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="supplements-hero">
+        <div>
+            <h1>💊 Supplements & Vitamins</h1>
+            <p>Premium quality supplements to fuel your fitness journey and support your health goals</p>
+        </div>
+    </section>
+
+    <div class="supplements-container">
+        <!-- Search and Controls Bar -->
+        <div class="search-controls-bar">
+            <input type="text" id="searchInput" placeholder="Search supplements..." class="main-search-input">
+            <button class="filter-modal-btn" onclick="openFilterModal()">🎛️ Filters & Sort</button>
+        </div>
+        
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="products-header">
+                <h2>Our Products</h2>
+                <div class="header-controls">
+                    <select id="categorySelect" class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="Whey Protein">Whey Protein</option>
+                        <option value="Creatine">Creatine</option>
+                        <option value="Amino Acids">Amino Acids</option>
+                        <option value="Fish Oil & Omegas">Fish Oil & Omegas</option>
+                        <option value="Pre-Workout">Pre-Workout</option>
+                        <option value="Optimum Nutrition">Optimum Nutrition</option>
+                        <option value="Limitless">Limitless</option>
+                        <option value="NOW">NOW</option>
+                        <option value="Nutrex">Nutrex</option>
+                    </select>
+                </div>
+            </div>
+            
+            <p class="products-count"><strong id="productCount">0</strong> of <strong id="totalCount">0</strong> products</p>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+            
+            <!-- Pagination -->
+            <div id="paginationContainer"></div>
+        </section>
+    </div>
+    
+    <!-- Filter Modal Popup -->
+    <div id="filterModal" class="filter-modal">
+        <div class="filter-modal-content">
+            <div class="filter-modal-header">
+                <h3>Filters & Sort</h3>
+                <button class="close-modal-btn" onclick="closeFilterModal()">✕</button>
+            </div>
+            
+            <div class="filter-modal-body">
+                <div class="filter-group">
+                    <label for="sortSelect">Sort By</label>
+                    <select id="sortSelect" class="filter-select">
+                        <option value="">Default</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="price-asc">Price (Low to High)</option>
+                        <option value="price-desc">Price (High to Low)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Max Price (EGP)</label>
+                    <div class="price-range-container">
+                        <div class="price-values">
+                            Up to <span id="maxPriceDisplay">5000</span> EGP
+                        </div>
+                        <input type="range" id="maxPrice" min="0" max="5000" value="5000" step="50" class="price-slider">
+                    </div>
+                </div>
+                
+                <div class="filter-modal-actions">
+                    <button onclick="applyFilters(); closeFilterModal();" class="apply-filter-btn">Apply Filters</button>
+                    <button onclick="clearFilters(); closeFilterModal();" class="clear-filters-btn">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--card-bg); padding: 2rem; text-align: center; margin-top: 4rem; border-top: 1px solid rgba(108, 99, 255, 0.2);">
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            <a href="index.html" style="color: var(--primary-color); text-decoration: none; margin: 0 1rem;">← Back to Home</a>
+        </p>
+        <p style="color: var(--text-secondary);">
+            © 2024 GRLLA Fitness. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="supplements.js"></script>
+</body>
+</html>
