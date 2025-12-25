@@ -2,18 +2,26 @@
 
 /* Import base styles from main app */
 :root {
-    --primary-color: #6C63FF;
-    --secondary-color: #00D9FF;
-    --accent-color: #FF6B9D;
-    --dark-bg: #0F0F23;
-    --card-bg: #1A1A2E;
+    --primary-color: #FF5841;
+    --secondary-color: #FF7A5C;
+    --accent-color: #FF5841;
+    --dark-bg: #0A0A0A;
+    --card-bg: #1A1A1A;
+    --medium-grey: #2A2A2A;
+    --light-grey: #3A3A3A;
+    --border-grey: #333333;
+    --border-light: #404040;
     --text-primary: #FFFFFF;
-    --text-secondary: #B8B8D1;
-    --gradient-1: linear-gradient(135deg, #6C63FF 0%, #00D9FF 100%);
-    --gradient-2: linear-gradient(135deg, #FF6B9D 0%, #FFA06B 100%);
-    --shadow-sm: 0 2px 10px rgba(108, 99, 255, 0.1);
-    --shadow-md: 0 8px 30px rgba(108, 99, 255, 0.2);
-    --shadow-lg: 0 15px 50px rgba(108, 99, 255, 0.3);
+    --text-secondary: #B8B8B8;
+    --text-tertiary: #808080;
+    --gradient-1: linear-gradient(135deg, #FF5841 0%, #FF7A5C 100%);
+    --gradient-2: linear-gradient(135deg, #FF5841 0%, #FF9068 100%);
+    --gradient-grey: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+    --gradient-grey-light: linear-gradient(135deg, #2A2A2A 0%, #3A3A3A 100%);
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.7);
+    --shadow-orange: 0 4px 15px rgba(255, 88, 65, 0.2);
 }
 
 * {
@@ -25,9 +33,7 @@
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--dark-bg);
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(108, 99, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+    background-image: none;
     background-attachment: fixed;
     color: var(--text-primary);
     overflow-x: hidden;
@@ -100,7 +106,7 @@ body {
     flex: 1;
     padding: 0.6rem 1rem;
     background: var(--card-bg);
-    border: 2px solid rgba(108, 99, 255, 0.3);
+    border: 2px solid var(--border-grey);
     border-radius: 25px;
     color: var(--text-primary);
     font-size: 0.9rem;
@@ -109,8 +115,8 @@ body {
 }
 
 .main-search-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+    border-color: var(--border-light);
+    box-shadow: 0 0 0 3px rgba(64, 64, 64, 0.2);
 }
 
 .main-search-input::placeholder {
@@ -162,7 +168,7 @@ body {
     max-width: 500px;
     max-height: 80vh;
     overflow-y: auto;
-    border: 1px solid rgba(108, 99, 255, 0.3);
+    border: 1px solid var(--border-grey);
     box-shadow: var(--shadow-lg);
 }
 
@@ -171,7 +177,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid rgba(108, 99, 255, 0.2);
+    border-bottom: 1px solid var(--border-grey);
 }
 
 .filter-modal-header h3 {
@@ -184,12 +190,12 @@ body {
 }
 
 .close-modal-btn {
-    background: rgba(255, 107, 157, 0.2);
-    border: none;
+    background: var(--medium-grey);
+    border: 1px solid var(--border-grey);
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    color: var(--accent-color);
+    color: var(--text-secondary);
     font-size: 1.3rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -199,7 +205,8 @@ body {
 }
 
 .close-modal-btn:hover {
-    background: rgba(255, 107, 157, 0.3);
+    background: var(--light-grey);
+    color: var(--text-primary);
     transform: rotate(90deg);
 }
 
@@ -223,8 +230,8 @@ body {
 .price-input {
     width: 100%;
     padding: 0.8rem;
-    background: rgba(108, 99, 255, 0.1);
-    border: 1px solid rgba(108, 99, 255, 0.3);
+    background: var(--medium-grey);
+    border: 1px solid var(--border-grey);
     border-radius: 10px;
     color: var(--text-primary);
     font-size: 0.9rem;
@@ -240,8 +247,8 @@ body {
 
 .filter-select:focus,
 .price-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+    border-color: var(--border-light);
+    box-shadow: 0 0 0 3px rgba(64, 64, 64, 0.2);
 }
 
 .price-input {
@@ -337,12 +344,14 @@ body {
 }
 
 .clear-filters-btn {
-    background: rgba(255, 107, 157, 0.2);
-    color: var(--accent-color);
+    background: var(--medium-grey);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-grey);
 }
 
 .clear-filters-btn:hover {
-    background: rgba(255, 107, 157, 0.3);
+    background: var(--light-grey);
+    color: var(--text-primary);
 }
 
 /* Products Grid */
@@ -372,7 +381,7 @@ body {
 .category-select {
     padding: 0.5rem 1rem;
     background: var(--card-bg);
-    border: 2px solid rgba(108, 99, 255, 0.3);
+    border: 2px solid var(--border-grey);
     border-radius: 20px;
     color: var(--text-primary);
     font-weight: 600;
@@ -384,8 +393,8 @@ body {
 
 .category-select:hover,
 .category-select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+    border-color: var(--border-light);
+    box-shadow: 0 0 0 3px rgba(64, 64, 64, 0.2);
 }
 
 .products-count {
@@ -422,7 +431,7 @@ body {
 .page-btn {
     padding: 0.6rem 1rem;
     background: var(--card-bg);
-    border: 2px solid rgba(108, 99, 255, 0.3);
+    border: 2px solid var(--border-grey);
     border-radius: 10px;
     color: var(--text-primary);
     font-weight: 600;
@@ -433,7 +442,7 @@ body {
 }
 
 .page-btn:hover {
-    border-color: var(--primary-color);
+    border-color: var(--border-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -456,7 +465,7 @@ body {
     background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid rgba(108, 99, 255, 0.2);
+    border: 1px solid var(--border-grey);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     cursor: pointer;
@@ -481,13 +490,13 @@ body {
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
+    border-color: var(--border-light);
 }
 
 .product-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, rgba(108, 99, 255, 0.2) 0%, rgba(0, 217, 255, 0.2) 100%);
+    background: var(--medium-grey);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -560,13 +569,13 @@ body {
 }
 
 .in-stock {
-    background: rgba(0, 217, 255, 0.2);
-    color: var(--secondary-color);
+    background: rgba(184, 184, 184, 0.2);
+    color: var(--text-secondary);
 }
 
 .out-of-stock {
-    background: rgba(255, 107, 157, 0.2);
-    color: var(--accent-color);
+    background: var(--medium-grey);
+    color: var(--text-tertiary);
 }
 
 .view-details-btn {
@@ -632,7 +641,7 @@ body {
     background: var(--card-bg);
     border-radius: 20px;
     padding: 2rem;
-    border: 1px solid rgba(108, 99, 255, 0.2);
+    border: 1px solid var(--border-grey);
     margin-bottom: 2rem;
 }
 
@@ -653,7 +662,7 @@ body {
 .main-image {
     width: 100%;
     height: 400px;
-    background: linear-gradient(135deg, rgba(108, 99, 255, 0.2) 0%, rgba(0, 217, 255, 0.2) 100%);
+    background: var(--medium-grey);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -690,17 +699,17 @@ body {
 }
 
 .image-thumbnails-scroll::-webkit-scrollbar-track {
-    background: rgba(108, 99, 255, 0.1);
+    background: var(--medium-grey);
     border-radius: 10px;
 }
 
 .image-thumbnails-scroll::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: var(--gradient-grey-light);
     border-radius: 10px;
 }
 
 .image-thumbnails-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-color);
+    background: var(--light-grey);
 }
 
 .thumbnail {
@@ -712,18 +721,18 @@ body {
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 0.3s;
-    background: rgba(108, 99, 255, 0.1);
+    background: var(--medium-grey);
     flex-shrink: 0;
 }
 
 .thumbnail:hover {
-    border-color: var(--primary-color);
+    border-color: var(--border-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .thumbnail.active {
-    border-color: var(--primary-color);
+    border-color: var(--border-light);
     box-shadow: var(--shadow-md);
 }
 
@@ -780,12 +789,12 @@ body {
 }
 
 .product-detail-description p::-webkit-scrollbar-track {
-    background: rgba(108, 99, 255, 0.1);
+    background: var(--medium-grey);
     border-radius: 10px;
 }
 
 .product-detail-description p::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: var(--gradient-grey-light);
     border-radius: 10px;
 }
 
