@@ -53,7 +53,7 @@ function toggleLanguage(event) {
     });
     
     // Update section headlines
-    updateSectionHeadlines();
+    // updateSectionHeadlines(); // Commented out - now using text headings
     
     // Re-render packages and FAQ with new language
     document.getElementById('standardPackages').innerHTML = '';
@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadHomeProducts();
     
     // Initialize other features
-    updateSectionHeadlines();
+    // updateSectionHeadlines(); // Commented out - now using text headings
     initSuccessSlider();
     initReviewSlider();
     renderPackages(standardPackages, 'standardPackages');
