@@ -93,7 +93,7 @@ function toggleMobileMenu() {
 
 // Success Stories Slider
 const successImages = [
-    '1-1.png', '1-2.png', '1-3.png', '1-4.png', '1-4.png', '1-5.png', '1-6.png', '1-7.png', '1-8.png', '1-9.png'
+    '1-1.png',  '1-3.png', '1-7.png', '1-8.png'
 ];
 
 function initSuccessSlider() {
@@ -331,7 +331,7 @@ document.addEventListener('click', function(e) {
 // Load random products for home page
 async function loadHomeProducts() {
     try {
-        const response = await fetch('nbs_supplements.json');
+        const response = await fetch('data/nbs_supplements.json');
         const data = await response.json();
         
         // Get 4 random products

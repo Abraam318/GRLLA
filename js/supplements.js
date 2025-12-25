@@ -12,7 +12,7 @@ let productsPerPage = 20;
 // Load products from JSON
 async function loadProducts() {
     try {
-        const response = await fetch('nbs_supplements.json');
+        const response = await fetch('../data/nbs_supplements.json');
         const data = await response.json();
         allProducts = data.products;
         filteredProducts = [...allProducts];
@@ -311,7 +311,7 @@ function loadProductDetail() {
         return;
     }
     
-    fetch('nbs_supplements.json')
+    fetch('../data/nbs_supplements.json')
         .then(response => response.json())
         .then(data => {
             const product = data.products.find(p => p.url === productUrl);

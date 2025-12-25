@@ -50,7 +50,7 @@ html {
 .header {
     min-height: 100vh;
     background: linear-gradient(135deg, rgba(15, 15, 35, 0.85) 0%, rgba(26, 26, 46, 0.85) 100%), 
-                url('assets/images/header-img.png');
+                url('../assets/images/header-img.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -93,13 +93,13 @@ html {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(15, 15, 35, 0.95);
-    backdrop-filter: blur(20px);
+    background: transparent;
+    backdrop-filter: none;
     padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(108, 99, 255, 0.2);
+    border-bottom: none;
 }
 
 .wraper {
@@ -435,7 +435,9 @@ html {
 
 /* Section Headlines */
 .section-headline {
-    height: 120px;
+    height: 180px;
+    width: 100%;
+    max-width: 600px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -546,7 +548,7 @@ html {
 }
 
 .details .image {
-    background-image: url('assets/images/captin.jpg');
+    background-image: url('../assets/images/captin.jpg');
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -626,7 +628,7 @@ html {
     border: 1px solid rgba(108, 99, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .item::before {
@@ -884,6 +886,76 @@ html {
     .nav ul {
         gap: 1.5rem;
     }
+    
+    
+    .cert-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem;
+    }
+    
+    .cert-image {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 1.5rem auto;
+        order: 1;
+        position: relative;
+        height: auto;
+    }
+    
+    .cert-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        border-radius: 20px;
+    }
+    
+    .cert-info {
+        width: 100%;
+        order: 2;
+    }
+    
+    .cert-info h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .cert-info p {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cert-list li {
+        margin: 1.2rem 0;
+        padding: 1rem;
+    }
+    
+    .cert-list li:hover {
+        transform: translateX(5px);
+    }
+    
+    /* Reduce section spacing */
+    .aboutus {
+        padding: 3rem 2rem;
+    }
+    
+    .packages {
+        padding: 2rem 1.5rem;
+    }
+    
+    .faq-section {
+        padding: 3rem 2rem;
+    }
+    
+    .shop-now-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .certifications-section {
+        padding: 3rem 1.5rem;
+    }
 }
 
 @media (max-width: 640px) {
@@ -896,17 +968,24 @@ html {
     }
     
     .cta {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
         width: 100%;
     }
     
     .main-cta, .faq-cta {
-        width: 100%;
+        flex: 1;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.85rem;
         text-align: center;
+        white-space: nowrap;
     }
     
     .section-headline {
-        height: 80px;
+        height: 150px !important;
+        width: 100% !important;
+        max-width: 90% !important;
     }
     
     .faq-section h2 {
@@ -914,6 +993,96 @@ html {
     }
     
     .content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .certifications-section {
+        padding: 2rem 1rem;
+    }
+    
+    .cert-content {
+        gap: 1.5rem;
+    }
+    
+    .cert-image {
+        margin-bottom: 1rem;
+    }
+    
+    .cert-info h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cert-info p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cert-list li {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: left;
+        align-items: flex-start;
+        margin: 0.8rem 0;
+        padding: 0.8rem;
+    }
+    
+    .cert-list li strong {
+        font-size: 1rem;
+    }
+    
+    .cert-list li span {
+        font-size: 0.85rem;
+    }
+    
+    /* Reduce spacing for other sections */
+    .header {
+        min-height: 100vh;
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    .aboutus {
+        padding: 2.5rem 1rem;
+    }
+    
+    .details {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .packages {
+        padding: 2rem 1rem;
+    }
+    
+    .items {
+        gap: 1.5rem;
+    }
+    
+    .faq-section {
+        padding: 2.5rem 1rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .faq-item {
+        margin: 1rem 0;
+    }
+    
+    .section-headline {
+        height: 150px !important;
+        width: 100% !important;
+        max-width: 95% !important;
+        margin: 2.5rem auto !important;
+    }
+    
+    .shop-now-section {
         padding: 2rem 1rem;
     }
 }
@@ -930,6 +1099,107 @@ html {
 
 .loading {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.03) 0%, rgba(0, 217, 255, 0.03) 100%);
+}
+
+.cert-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.cert-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.cert-image:hover img {
+    transform: scale(1.05);
+}
+
+.cert-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cert-info p {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.cert-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cert-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(108, 99, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s;
+}
+
+.cert-list li:hover {
+    background: rgba(108, 99, 255, 0.1);
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.cert-list li svg {
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+}
+
+.cert-list li svg path:last-child {
+    fill: var(--primary-color);
+}
+
+.cert-list li div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cert-list li strong {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    display: block;
+}
+
+.cert-list li span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: block;
 }
 
 /* Shop Now Section */
