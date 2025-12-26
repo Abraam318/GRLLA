@@ -165,6 +165,7 @@ const packages = [
         title: { en: 'SILVER PACKAGE', ar: 'الباقة الفضية' },
         duration: { en: '3 MONTHS', ar: '3 أشهر' },
         price: '2000 EGP',
+        compareAtPrice: '2800 EGP',
         popular: false,
         features: [
             { 
@@ -200,6 +201,7 @@ const packages = [
         title: { en: 'GOLD PACKAGE', ar: 'الباقة الذهبية' },
         duration: { en: '3 MONTHS', ar: '3 أشهر' },
         price: '3000 EGP',
+        compareAtPrice: '4200 EGP',
         popular: true,
         features: [
             { 
@@ -250,6 +252,7 @@ const packages = [
         title: { en: 'VIP PACKAGE', ar: 'الباقة المميزة' },
         duration: { en: '3 MONTHS', ar: '3 أشهر' },
         price: '5000 EGP',
+        compareAtPrice: '7000 EGP',
         popular: false,
         features: [
             { 
@@ -336,7 +339,12 @@ function renderPackages(pkgs, containerId) {
         html += `<div class="package-name" data-en="${pkg.name}" data-ar="${pkg.name}">${pkg.name}</div>`;
         html += `<h2 data-en="${pkg.title.en}" data-ar="${pkg.title.ar}">${pkg.title[currentLang]}</h2>`;
         html += `<div class="duration" data-en="PER / ${pkg.duration.en}" data-ar="لكل / ${pkg.duration.ar}">PER / ${pkg.duration[currentLang]}</div>`;
-        html += `<h3>${pkg.price}</h3>`;
+        html += '<div class="price-container">';
+        if (pkg.compareAtPrice) {
+            html += `<div class="compare-price">${pkg.compareAtPrice}</div>`;
+        }
+        html += `<h3 class="actual-price">${pkg.price}</h3>`;
+        html += '</div>';
         html += '</div>';
         html += '<ul class="features-list">';
         

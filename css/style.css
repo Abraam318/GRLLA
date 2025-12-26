@@ -1751,6 +1751,34 @@ html {
   margin: 1rem 0;
 }
 
+/* Price Container */
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.compare-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.actual-price {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+
 /* Popular Tag */
 .populartag {
   display: inline-block;
