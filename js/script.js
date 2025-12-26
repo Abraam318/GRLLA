@@ -102,6 +102,15 @@ function initSuccessSlider() {
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
         slide.style.backgroundImage = `url('assets/images/Trans/${img}')`;
+        
+        // Create duration label overlay
+        const durationLabel = document.createElement('div');
+        durationLabel.className = 'transformation-duration';
+        durationLabel.innerHTML = `
+            <span class="duration-text" data-en="2 MONTHS TRANSFORMATION" data-ar="تحول شهرين">2 MONTHS TRANSFORMATION</span>
+        `;
+        
+        slide.appendChild(durationLabel);
         container.appendChild(slide);
     });
     

@@ -498,19 +498,21 @@ html {
 
 /* Swiper Styles */
 .success-swiper {
-  height: 500px;
   margin: 3rem 0;
   padding: 0 2rem;
 }
 
 .success-swiper .swiper-slide {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all 0.3s;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
 }
 
 .success-swiper .swiper-slide:hover {
@@ -532,6 +534,64 @@ html {
 .success-swiper .swiper-pagination {
   bottom: -40px !important;
   position: relative;
+}
+
+/* Transformation Duration Label */
+.transformation-duration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 1rem;
+  background: linear-gradient(
+    to top,
+    rgba(15, 15, 35, 0.98) 0%,
+    rgba(108, 99, 255, 0.92) 60%,
+    rgba(0, 217, 255, 0.85) 100%
+  );
+  backdrop-filter: blur(15px);
+  z-index: 10;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 -8px 30px rgba(108, 99, 255, 0.5);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.transformation-duration .duration-text {
+  display: block;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7),
+               0 0 20px rgba(108, 99, 255, 0.8);
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7),
+                 0 0 20px rgba(108, 99, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7),
+                 0 0 30px rgba(0, 217, 255, 1),
+                 0 0 40px rgba(108, 99, 255, 0.6);
+  }
+}
+
+/* Mobile adjustments for duration label */
+@media (max-width: 768px) {
+  .transformation-duration {
+    padding: 0.9rem 0.75rem;
+  }
+  
+  .transformation-duration .duration-text {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
 }
 
 .review-swiper {
@@ -598,7 +658,7 @@ html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: #6C63FF rgba(108, 99, 255, 0.1);
+  scrollbar-color: #6c63ff rgba(108, 99, 255, 0.1);
 }
 
 .captain-carousel::-webkit-scrollbar {
@@ -1316,20 +1376,25 @@ html {
 }
 
 .coming-soon-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(108, 99, 255, 0.1) 0%,
+    transparent 70%
+  );
   z-index: 0;
   animation: pulse 4s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.5;
   }
@@ -1358,7 +1423,8 @@ html {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -1388,7 +1454,8 @@ html {
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.5));
   }
   50% {
@@ -1415,7 +1482,8 @@ html {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
